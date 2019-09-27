@@ -8,16 +8,16 @@
 > 
 > First start with adding the dependency of Hibernate in your Maven projects [pom.xml](https://github.com/nielsstrychi/JPA_Hibernate_Plugin/blob/master/pom.xml).
 > 
->    <dependency>
+>    `<dependency>
 >         <groupId>org.hibernate</groupId>
 >         <artifactId>hibernate-core</artifactId>
 >         <version>5.2.12.Final</version>
 >         <scope>compile</scope>
->     </dependency>
+>     </dependency>`
 > 
 > Then lets configure our [persistence.xml](https://github.com/nielsstrychi/JPA_Hibernate_Plugin/blob/master/src/main/resources/META-INF/persistence.xml) and place it in the **src/main/recources/META-INF/** directory.
 > 
-> <div class="code"><?xml version="1.0" encoding="UTF-8" ?>
+> `<?xml version="1.0" encoding="UTF-8" ?>
 > <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 >              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 >              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
@@ -37,22 +37,22 @@
 >             <property name="hibernate.show_sql" value="true" />
 >         </properties>
 >     </persistence-unit>
-> </persistence></div>
+> </persistence>`
 > 
 > Now JPA with Hibernate would be setup for a normal project.
 > For a Minecraft plugin you just need to add a important piece of code more to make it work.
 > Now JPA with Hibernate would be setup for a normal project.
 > For a Minecraft plugin you just need to add a important piece of code more to make it work.
 > 
-> Thread.currentThread().setContextClassLoader(getClass().getClassLoader());
+> `Thread.currentThread().setContextClassLoader(getClass().getClassLoader());`
 > 
 > The code above need to be added to your java code before calling.
 > 
-> Persistence.createEntityManagerFactory("persistence-unit");
+> `Persistence.createEntityManagerFactory("persistence-unit");`
 > 
 > Else you may get a exception like this, and the persistence.xml may not be loaded.
 > 
-> No Persistence provider for EntityManager
+> `No Persistence provider for EntityManager`
 > 
 > Thanks to [@computerwizjared](https://www.spigotmc.org/members/computerwizjared.17705/) for investigating and finding a solution for
 > Hibernate to utilize the classes and entities in the wrong classpath.
@@ -61,7 +61,7 @@
 > 
 > Now that JPA + Hibernate is setup succesfully an running without exceptions we can start using it like this.
 > 
-> static {
+> `static {
 >         Thread.currentThread().setContextClassLoader(getClass().getClassLoader());
 >     }
 > 
@@ -92,5 +92,5 @@
 >         tx.commit();
 >         em.close();
 >         emf.close();
->     }
+>     }`
 > 
