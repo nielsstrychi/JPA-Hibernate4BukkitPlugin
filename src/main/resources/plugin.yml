@@ -1,0 +1,4 @@
+name: JPA_Hibernate_Plugin
+main: com.nielsstrychi.Plugin
+version: ${version}
+commands:

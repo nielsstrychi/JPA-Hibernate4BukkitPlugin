@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                    http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="persistence-unit" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.nielsstrychi.Entity</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://yourdatabase.com:3306" />
+            <property name="javax.persistence.jdbc.user" value="yourusername" />
+            <property name="javax.persistence.jdbc.password" value="yourpassword" />
+            <property name="javax.persistence.schema-generation.database.action" value="create" />
+            <!-- Hibernate Specific -->
+            <property name="hibernate.show_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
