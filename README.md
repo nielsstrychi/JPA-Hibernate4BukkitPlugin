@@ -8,13 +8,14 @@
 > 
 > First start with adding the dependency of Hibernate in your Maven projects [pom.xml](https://github.com/nielsstrychi/JPA_Hibernate_Plugin/blob/master/pom.xml).
 > 
->    `<dependency>
+>    `
+>     <dependency>
 >         <groupId>org.hibernate</groupId>
 >         <artifactId>hibernate-core</artifactId>
 >         <version>5.2.12.Final</version>
 >         <scope>compile</scope>
->     </dependency>`
-> 
+>     </dependency>
+> `
 > Then lets configure our [persistence.xml](https://github.com/nielsstrychi/JPA_Hibernate_Plugin/blob/master/src/main/resources/META-INF/persistence.xml) and place it in the **src/main/recources/META-INF/** directory.
 > 
 > `<?xml version="1.0" encoding="UTF-8" ?>
@@ -61,9 +62,10 @@
 > 
 > Now that JPA + Hibernate is setup succesfully an running without exceptions we can start using it like this.
 > 
-> `static {
+> `   
+>     static {
 >         Thread.currentThread().setContextClassLoader(getClass().getClassLoader());
->     }
+>     }`
 > 
 >     protected static void write() {
 >         EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence-unit");
@@ -92,5 +94,5 @@
 >         tx.commit();
 >         em.close();
 >         emf.close();
->     }`
+>     }
 > 
