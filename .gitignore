@@ -1,0 +1,11 @@
+
+/* .gitignore file nielsstrychi */
+
+.idea/
+target/
+lib/
+work/
+*.iml
+*.properties
+
+Buildtools/
